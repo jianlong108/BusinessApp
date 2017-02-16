@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "JLTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    JLTabBarController *tabbar = [[JLTabBarController alloc]init];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = tabbar;
+    self.window.backgroundColor = [UIColor grayColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

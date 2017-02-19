@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4AC8A351E5953C200769961 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A341E5953C200769961 /* BaseTableViewCell.m */; };
 		F4AC8A381E5955C000769961 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A371E5955C000769961 /* HomeTableViewCell.m */; };
 		F4AC8A3B1E5955F800769961 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A3A1E5955F800769961 /* HomeModel.m */; };
+		F4AC8A401E5996CF00769961 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A3E1E5996CF00769961 /* BaseTableViewCell.m */; };
 		F4DB13BC1E57EF260092B79B /* DCPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B01E57EF260092B79B /* DCPicScrollView.m */; };
 		F4DB13BD1E57EF260092B79B /* DCWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B21E57EF260092B79B /* DCWebImageManager.m */; };
 		F4DB13BE1E57EF260092B79B /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B51E57EF260092B79B /* TAAbstractDotView.m */; };
@@ -78,13 +78,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F4AC8A321E594E9700769961 /* CellBaseModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellBaseModelProtocol.h; sourceTree = "<group>"; };
-		F4AC8A331E5953C200769961 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
-		F4AC8A341E5953C200769961 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		F4AC8A361E5955C000769961 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		F4AC8A371E5955C000769961 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		F4AC8A391E5955F800769961 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
 		F4AC8A3A1E5955F800769961 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		F4AC8A3D1E5996CF00769961 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		F4AC8A3E1E5996CF00769961 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		F4AC8A3F1E5996CF00769961 /* CellBaseModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellBaseModelProtocol.h; sourceTree = "<group>"; };
 		F4DB13AF1E57EF260092B79B /* DCPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPicScrollView.h; sourceTree = "<group>"; };
 		F4DB13B01E57EF260092B79B /* DCPicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPicScrollView.m; sourceTree = "<group>"; };
 		F4DB13B11E57EF260092B79B /* DCWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCWebImageManager.h; sourceTree = "<group>"; };
@@ -211,6 +211,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4AC8A3C1E5996A500769961 /* cell model */ = {
+			isa = PBXGroup;
+			children = (
+				F4AC8A3D1E5996CF00769961 /* BaseTableViewCell.h */,
+				F4AC8A3E1E5996CF00769961 /* BaseTableViewCell.m */,
+				F4AC8A3F1E5996CF00769961 /* CellBaseModelProtocol.h */,
+			);
+			path = "cell model";
+			sourceTree = "<group>";
+		};
 		F4DB13AE1E57EF260092B79B /* DCPicscrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +325,7 @@
 		F4FF0A421E55DD7B00061D9D /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F4AC8A3C1E5996A500769961 /* cell model */,
 				F4FF0A4C1E55DDBE00061D9D /* JLNaviagationController.h */,
 				F4FF0A4D1E55DDBE00061D9D /* JLNaviagationController.m */,
 				F4FF0A4E1E55DDBE00061D9D /* JLNavigationBar.h */,
@@ -386,9 +397,6 @@
 				F4AC8A371E5955C000769961 /* HomeTableViewCell.m */,
 				F4AC8A391E5955F800769961 /* HomeModel.h */,
 				F4AC8A3A1E5955F800769961 /* HomeModel.m */,
-				F4AC8A321E594E9700769961 /* CellBaseModelProtocol.h */,
-				F4AC8A331E5953C200769961 /* BaseTableViewCell.h */,
-				F4AC8A341E5953C200769961 /* BaseTableViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -575,7 +583,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4AC8A351E5953C200769961 /* BaseTableViewCell.m in Sources */,
 				F4FF0AD61E55E8C700061D9D /* UIImage+GIF.m in Sources */,
 				F4DB13C01E57EF260092B79B /* TADotView.m in Sources */,
 				F4DB13CA1E57F6960092B79B /* JLViewController.m in Sources */,
@@ -587,6 +594,7 @@
 				F4FF0ADB1E55E8C700061D9D /* UIView+WebCacheOperation.m in Sources */,
 				F4FF0A8E1E55DFBF00061D9D /* HomeViewController.m in Sources */,
 				F4DB13BF1E57EF260092B79B /* TAAnimatedDotView.m in Sources */,
+				F4AC8A401E5996CF00769961 /* BaseTableViewCell.m in Sources */,
 				F4FF0A501E55DDBE00061D9D /* JLNaviagationController.m in Sources */,
 				F4FF0ACE1E55E8C700061D9D /* SDImageCache.m in Sources */,
 				F4DB13C11E57EF260092B79B /* TAPageControl.m in Sources */,

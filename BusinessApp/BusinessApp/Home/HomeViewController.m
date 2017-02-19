@@ -20,7 +20,7 @@
 @end
 
 @implementation HomeViewController
-
+#pragma mark - view circle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -28,6 +28,11 @@
     
     [self configureView];
 }
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+#pragma mark - private
 - (void)configureData
 {
     _dataArray = [NSMutableArray array];
@@ -84,6 +89,7 @@
     DCPicScrollView *headerView = [[DCPicScrollView alloc]initWithFrame:CGRectMake(0, 0, _mainView.bounds.size.width, 260) WithImageNames:@[@"h1",@"h2",@"h3",@"h4"]];
     _mainView.tableHeaderView = headerView;
 }
+#pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -107,10 +113,8 @@
     HomeModel *model = _dataArray[indexPath.row];
     return model.cellHeight;
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+#pragma mark - statusbar
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }

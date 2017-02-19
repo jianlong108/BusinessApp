@@ -1,24 +1,23 @@
 //
-//  ViewController.m
+//  JLViewController.m
 //  BusinessApp
 //
-//  Created by Wangjianlong on 2017/2/16.
+//  Created by Wangjianlong on 2017/2/18.
 //  Copyright © 2017年 JL.Com. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "JLViewController.h"
 
-@interface ViewController ()
+@interface JLViewController ()
 
 @end
 
-@implementation ViewController
+@implementation JLViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -24,21 +24,21 @@
 
 - (NSArray *)dataArray{
     if (_dataArray == nil) {
-        JLTabbarModel *model2 = [[JLTabbarModel alloc]init];
-        model2.VcClass = [HomeViewController class];
-        model2.tabbarImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
-        model2.tabbarTitle = @"活动";
+        JLTabbarModel *m_home = [[JLTabbarModel alloc]init];
+        m_home.VcClass = [HomeViewController class];
+        m_home.tabbarImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
+        m_home.tabbarTitle = @"活动";
         
-        JLTabbarModel *model1 = [[JLTabbarModel alloc]init];
-        model1.VcClass = [BoutiqueViewController class];
-        model1.tabbarTitle = @"精品";
-        model1.tabbarImage = [UIImage imageNamed:@"tabBar_essence_icon"];
+        JLTabbarModel *m_boutique = [[JLTabbarModel alloc]init];
+        m_boutique.VcClass = [BoutiqueViewController class];
+        m_boutique.tabbarTitle = @"精品";
+        m_boutique.tabbarImage = [UIImage imageNamed:@"tabBar_essence_icon"];
         
-        JLTabbarModel *model3 = [[JLTabbarModel alloc]init];
-        model3.VcClass = [JLPersonCenterViewController class];
-        model3.tabbarTitle = @"我的";
-        model3.tabbarImage = [UIImage imageNamed:@"tabBar_essence_icon"];
-        _dataArray = @[model1,model2,model3];
+        JLTabbarModel *m_person = [[JLTabbarModel alloc]init];
+        m_person.VcClass = [JLPersonCenterViewController class];
+        m_person.tabbarTitle = @"我的";
+        m_person.tabbarImage = [UIImage imageNamed:@"tabBar_essence_icon"];
+        _dataArray = @[m_home,m_boutique,m_person];
     }
     return _dataArray;
 }
@@ -65,7 +65,7 @@
 - (void)addVcWithVC:(Class)ViewControllerClass normalImage:(UIImage *)normalImage SelectedImage:(UIImage *)selectedImage Title:(NSString *)title Tag:(NSUInteger)tag{
     
     UIViewController *vc = [[ViewControllerClass alloc]init];
-    vc.tabBarItem.title = title;
+    vc.title = title;
     vc.tabBarItem.tag = tag;
     vc.tabBarItem.image = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = [normalImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];

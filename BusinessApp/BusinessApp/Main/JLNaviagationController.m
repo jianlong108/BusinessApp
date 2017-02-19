@@ -39,18 +39,15 @@
 + (void)setupNavigationBarTheme
 {
     UINavigationBar *appearance = [UINavigationBar appearance];
-    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor blackColor]] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 
     // 设置文字属性
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    if ([[UIDevice currentDevice].systemVersion doubleValue] <= 6.0) {
-        textAttrs[UITextAttributeTextColor] = [UIColor orangeColor];
-        textAttrs[UITextAttributeTextShadowOffset] =[[NSShadow alloc]init];
-    }else {
-        textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-        textAttrs[NSShadowAttributeName] = [[NSShadow alloc]init];
-    }
+    
+    textAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    textAttrs[NSShadowAttributeName] = [[NSShadow alloc]init];
+    
     [appearance setTitleTextAttributes:textAttrs];
     
 }
@@ -66,15 +63,11 @@
     /**设置文字属性**/
     // 设置普通状态的文字属性
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    if ([[UIDevice currentDevice].systemVersion doubleValue] < 7.0) {
-        textAttrs[UITextAttributeTextColor] = [UIColor orangeColor];
-        textAttrs[UITextAttributeFont] = [UIFont boldSystemFontOfSize:17];
-        textAttrs[UITextAttributeTextShadowOffset] =[[NSShadow alloc]init];
-    }else {
-        textAttrs[NSForegroundColorAttributeName] = [UIColor orangeColor];
-        textAttrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
-        textAttrs[NSShadowAttributeName] = [[NSShadow alloc]init];
-    }
+    
+    textAttrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    textAttrs[NSFontAttributeName] = [UIFont boldSystemFontOfSize:17];
+    textAttrs[NSShadowAttributeName] = [[NSShadow alloc]init];
+    
     [appearance setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     
 }
@@ -409,5 +402,10 @@
         
     }
 }
-
+- (UIViewController *)childViewControllerForStatusBarStyle{
+    return self.topViewController;
+}
+- (UIViewController *)childViewControllerForStatusBarHidden{
+    return self.topViewController;
+}
 @end

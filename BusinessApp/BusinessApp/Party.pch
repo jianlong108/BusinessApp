@@ -1,0 +1,16 @@
+//
+//  Party.pch
+//  BusinessApp
+//
+//  Created by Wangjianlong on 2017/2/18.
+//  Copyright © 2017年 JL.Com. All rights reserved.
+//
+
+#ifndef Party_pch
+#define Party_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "JLViewController.h"
+#import "UIImage+JL.h"
+#endif /* Party_pch */

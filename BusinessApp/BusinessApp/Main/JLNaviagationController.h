@@ -16,15 +16,12 @@
  @abstract   收到手势事件
  @discussion 收到手势事件
  @param      recoginzer 触发手势事件的手势识别器
- @result     无
  */
 - (void)JLNavigationPaningGesture:(UIPanGestureRecognizer *)recoginzer;
 /*!
  @method
  @abstract   手势返回事件
  @discussion 手势返回事件
- @param      无
- @result     无
  */
 - (void)JLNavigationBack;
 

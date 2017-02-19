@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BoutiqueViewController : UIViewController
+@interface BoutiqueViewController : JLViewController
 
 @end

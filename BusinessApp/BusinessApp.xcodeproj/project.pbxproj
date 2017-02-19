@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4AC8A351E5953C200769961 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A341E5953C200769961 /* BaseTableViewCell.m */; };
+		F4AC8A381E5955C000769961 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A371E5955C000769961 /* HomeTableViewCell.m */; };
+		F4AC8A3B1E5955F800769961 /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4AC8A3A1E5955F800769961 /* HomeModel.m */; };
 		F4DB13BC1E57EF260092B79B /* DCPicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B01E57EF260092B79B /* DCPicScrollView.m */; };
 		F4DB13BD1E57EF260092B79B /* DCWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B21E57EF260092B79B /* DCWebImageManager.m */; };
 		F4DB13BE1E57EF260092B79B /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4DB13B51E57EF260092B79B /* TAAbstractDotView.m */; };
@@ -75,6 +78,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4AC8A321E594E9700769961 /* CellBaseModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellBaseModelProtocol.h; sourceTree = "<group>"; };
+		F4AC8A331E5953C200769961 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		F4AC8A341E5953C200769961 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		F4AC8A361E5955C000769961 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		F4AC8A371E5955C000769961 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		F4AC8A391E5955F800769961 /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		F4AC8A3A1E5955F800769961 /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
 		F4DB13AF1E57EF260092B79B /* DCPicScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPicScrollView.h; sourceTree = "<group>"; };
 		F4DB13B01E57EF260092B79B /* DCPicScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPicScrollView.m; sourceTree = "<group>"; };
 		F4DB13B11E57EF260092B79B /* DCWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCWebImageManager.h; sourceTree = "<group>"; };
@@ -372,6 +382,13 @@
 			children = (
 				F4FF0A8C1E55DFBF00061D9D /* HomeViewController.h */,
 				F4FF0A8D1E55DFBF00061D9D /* HomeViewController.m */,
+				F4AC8A361E5955C000769961 /* HomeTableViewCell.h */,
+				F4AC8A371E5955C000769961 /* HomeTableViewCell.m */,
+				F4AC8A391E5955F800769961 /* HomeModel.h */,
+				F4AC8A3A1E5955F800769961 /* HomeModel.m */,
+				F4AC8A321E594E9700769961 /* CellBaseModelProtocol.h */,
+				F4AC8A331E5953C200769961 /* BaseTableViewCell.h */,
+				F4AC8A341E5953C200769961 /* BaseTableViewCell.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -558,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4AC8A351E5953C200769961 /* BaseTableViewCell.m in Sources */,
 				F4FF0AD61E55E8C700061D9D /* UIImage+GIF.m in Sources */,
 				F4DB13C01E57EF260092B79B /* TADotView.m in Sources */,
 				F4DB13CA1E57F6960092B79B /* JLViewController.m in Sources */,
@@ -577,6 +595,7 @@
 				F4FF0AD91E55E8C700061D9D /* UIImageView+HighlightedWebCache.m in Sources */,
 				F4FF0AD41E55E8C700061D9D /* SDWebImagePrefetcher.m in Sources */,
 				F4FF0AD21E55E8C700061D9D /* SDWebImageDownloaderOperation.m in Sources */,
+				F4AC8A381E5955C000769961 /* HomeTableViewCell.m in Sources */,
 				F4FF09FF1E55D94500061D9D /* main.m in Sources */,
 				F4FF0AD11E55E8C700061D9D /* SDWebImageDownloader.m in Sources */,
 				F4FF0ACD1E55E8C700061D9D /* NSData+ImageContentType.m in Sources */,
@@ -597,6 +616,7 @@
 				F4FF0AD71E55E8C700061D9D /* UIImage+MultiFormat.m in Sources */,
 				F4FF0AD81E55E8C700061D9D /* UIImage+WebP.m in Sources */,
 				F4FF0AD51E55E8C700061D9D /* UIButton+WebCache.m in Sources */,
+				F4AC8A3B1E5955F800769961 /* HomeModel.m in Sources */,
 				F4FF0A4B1E55DD7B00061D9D /* JLTabbarModel.m in Sources */,
 				F4FF0A7C1E55DE3B00061D9D /* JLSetLabelItem.m in Sources */,
 				F4FF0A511E55DDBE00061D9D /* JLNavigationBar.m in Sources */,

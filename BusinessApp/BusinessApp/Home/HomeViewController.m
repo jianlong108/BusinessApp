@@ -53,58 +53,62 @@
         for (HomeCycleADmodel *model in self.ADService.datas) {
             [array addObject: model.headPic];
         }
-        
-        DCPicScrollView *headerView = [[DCPicScrollView alloc]initWithFrame:CGRectMake(0, 0, _mainView.bounds.size.width, 260) WithImageNames:array];
+        //轮播图
+        DCPicScrollView *headerView = [[DCPicScrollView alloc]initWithFrame:CGRectMake(0, 0, _mainView.bounds.size.width, 200) WithImageNames:array];
         weakSelf.mainView.tableHeaderView = headerView;
+        
+        //流动的飨食
+        HomeModel *model1 = [[HomeModel alloc]init];
+        model1.cellHeight = 64;
+        model1.title = @"流动的飨食";
+        [weakSelf.dataArray addObject:model1];
+        int i =0;
+        for (HomeCycleADmodel *adModel in self.ADService.datas) {
+            HomeModel *model = [[HomeModel alloc]init];
+            model.imageURL = adModel.headPic;
+            model.cellHeight = 200;
+            [weakSelf.dataArray addObject:model];
+            i++;
+            if (i>2) {
+                break;
+            }
+        }
+        
         [weakSelf.mainView reloadData];
     } Faile:^(NSError *error) {
         NSLog(@"%@",error);
     }];
     
-    _dataArray = [NSMutableArray array];
-    HomeModel *model1 = [[HomeModel alloc]init];
-    model1.cellHeight = 64;
-    model1.title = @"流动的飨食";
-    [_dataArray addObject:model1];
     
-    for (int i = 0;i<3;i++) {
-        HomeModel *model = [[HomeModel alloc]init];
-        NSString *name = [NSString stringWithFormat:@"h%d",i+1];
-        model.imageObect = [UIImage imageNamed:name];
-        model.cellHeight = 200;
-        [_dataArray addObject:model];
-    }
-    
-    HomeModel *model2 = [[HomeModel alloc]init];
-    model2.title = @"品牌故事";
-    model2.cellHeight = 64;
-    [_dataArray addObject:model2];
-    
-    for (int i = 0;i<3;i++) {
-        HomeModel *model = [[HomeModel alloc]init];
-        NSString *name = [NSString stringWithFormat:@"h%d",i+1];
-        model.imageObect = [UIImage imageNamed:name];
-        model.cellHeight = 200;
-        [_dataArray addObject:model];
-    }
-    
-    HomeModel *model3 = [[HomeModel alloc]init];
-    model3.title = @"TV show";
-    model3.cellHeight = 64;
-    [_dataArray addObject:model3];
-    
-    for (int i = 0;i<3;i++) {
-        HomeModel *model = [[HomeModel alloc]init];
-        NSString *name = [NSString stringWithFormat:@"h%d",i+1];
-        model.imageObect = [UIImage imageNamed:name];
-        model.cellHeight = 200;
-        [_dataArray addObject:model];
-    }
-    
+//    HomeModel *model2 = [[HomeModel alloc]init];
+//    model2.title = @"品牌故事";
+//    model2.cellHeight = 64;
+//    [self.dataArray addObject:model2];
+//    
+//    for (int i = 0;i<3;i++) {
+//        HomeModel *model = [[HomeModel alloc]init];
+//        NSString *name = [NSString stringWithFormat:@"h%d",i+1];
+//        model.imageObect = [UIImage imageNamed:name];
+//        model.cellHeight = 200;
+//        [self.dataArray addObject:model];
+//    }
+//    
+//    HomeModel *model3 = [[HomeModel alloc]init];
+//    model3.title = @"TV show";
+//    model3.cellHeight = 64;
+//    [self.dataArray addObject:model3];
+//    
+//    for (int i = 0;i<3;i++) {
+//        HomeModel *model = [[HomeModel alloc]init];
+//        NSString *name = [NSString stringWithFormat:@"h%d",i+1];
+//        model.imageObect = [UIImage imageNamed:name];
+//        model.cellHeight = 200;
+//        [self.dataArray addObject:model];
+//    }
 }
 - (void)configureView
 {
-    UITableView *tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 64) style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -119,7 +123,7 @@
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _dataArray.count;
+    return self.dataArray.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"home_cell"];
@@ -138,7 +142,13 @@
     HomeModel *model = _dataArray[indexPath.row];
     return model.cellHeight;
 }
-
+#pragma mark - lazy
+- (NSMutableArray *)dataArray{
+    if (_dataArray == nil) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 #pragma mark - statusbar
 - (UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;

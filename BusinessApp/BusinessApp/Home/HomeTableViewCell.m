@@ -7,6 +7,7 @@
 //
 
 #import "HomeTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface HomeTableViewCell()
 @property(nonatomic,weak)UIImageView *acceroyView;
@@ -45,7 +46,7 @@
         _titleLabel.text = [dataModel cell_Title];
     }else if ([dataModel cell_ImageURL]){
         _imageView_Main.hidden = NO;
-        
+        [_imageView_Main setImageWithURL:[NSURL URLWithString:[dataModel cell_ImageURL]]  placeholderImage:[UIImage imageNamed:@"profile-image-placeholder"]];
     }else if([dataModel cell_ImageObject]){
         _imageView_Main.hidden = NO;
         _imageView_Main.image = [dataModel cell_ImageObject];

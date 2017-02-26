@@ -9,13 +9,20 @@
 #import "HomeViewController.h"
 #import "HomeTableViewCell.h"
 #import "HomeModel.h"
-
+#import "HomeCycleADService.h"
+#import "HomeCycleADmodel.h"
 #import "DCPicScrollView.h"
 
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,weak)UITableView *mainView;
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
+
+
+/**
+ 顶部轮播图service
+ */
+@property(nonatomic,strong)HomeCycleADService *ADService;
 
 @end
 
@@ -24,9 +31,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configureData];
+    
+    
+    
     
     [self configureView];
+    
+    [self configureData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -35,6 +46,21 @@
 #pragma mark - private
 - (void)configureData
 {
+    __weak typeof(self)weakSelf = self;
+    _ADService = [[HomeCycleADService alloc]init];
+    [_ADService getDataSuccess:^{
+        NSMutableArray *array = [NSMutableArray array];
+        for (HomeCycleADmodel *model in self.ADService.datas) {
+            [array addObject: model.headPic];
+        }
+        
+        DCPicScrollView *headerView = [[DCPicScrollView alloc]initWithFrame:CGRectMake(0, 0, _mainView.bounds.size.width, 260) WithImageNames:array];
+        weakSelf.mainView.tableHeaderView = headerView;
+        [weakSelf.mainView reloadData];
+    } Faile:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+    
     _dataArray = [NSMutableArray array];
     HomeModel *model1 = [[HomeModel alloc]init];
     model1.cellHeight = 64;
@@ -86,8 +112,7 @@
     
     _mainView = tableView;
     
-    DCPicScrollView *headerView = [[DCPicScrollView alloc]initWithFrame:CGRectMake(0, 0, _mainView.bounds.size.width, 260) WithImageNames:@[@"h1",@"h2",@"h3",@"h4"]];
-    _mainView.tableHeaderView = headerView;
+    
 }
 #pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
